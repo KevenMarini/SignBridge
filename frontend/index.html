@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignBridge AI | Sign Language Detection</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- MediaPipe Hands -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <!-- Socket.IO -->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>SignBridge<span>AI</span></h1>
+            <p>Bridging gaps with real-time Sign Language Translation</p>
+        </header>
+
+        <main>
+            <div class="video-section">
+                <div class="video-wrapper">
+                    <video id="input_video" autoplay playsinline></video>
+                    <canvas id="output_canvas"></canvas>
+                    <div class="detection-overlay">
+                        <div id="prediction_text" class="prediction-value">Waiting...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-panel">
+                <div class="card status-card">
+                    <h3>Connection Status</h3>
+                    <div id="connection_status" class="status-indicator offline">Disconnected</div>
+                </div>
+
+                <div class="card history-card">
+                    <h3>Recent Signs</h3>
+                    <div id="history_list" class="history-list">
+                        <!-- Signs will appear here -->
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="start_btn" class="btn primary">Start Camera</button>
+                    <button id="stop_btn" class="btn secondary">Stop Camera</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 SignBridge AI. Hand Tracking powered by MediaPipe.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

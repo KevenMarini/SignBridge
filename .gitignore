@@ -1,0 +1,23 @@
+# Virtual environment
+signenv/
+venv/
+.env
+
+# Large files
+gesture_model.pkl
+landmarks.csv
+*.pkl
+*.csv
+
+# Datasets and archives
+dataset/
+archive*/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
